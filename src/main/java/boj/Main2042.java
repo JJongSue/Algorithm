@@ -24,7 +24,7 @@ public class Main2042 {
             }
         }
 
-        void changeNum(int w, int num){
+        void changeNum(int w, long num){
             int now = start + w - 1;
             long dif = num - tree[now];
             while(now >= 1){
@@ -93,7 +93,7 @@ public class Main2042 {
         IndexTree it = new IndexTree(start);
 
         for (int i = 0; i < N; i++) {
-            it.tree[i+start] = Integer.parseInt(br.readLine());
+            it.tree[i+start] = Long.parseLong(br.readLine());
         }
         it.setTree();
         StringBuilder sb = new StringBuilder();
@@ -101,7 +101,7 @@ public class Main2042 {
             st = new StringTokenizer(br.readLine());
             int cmd = Integer.parseInt(st.nextToken());
             if (cmd == 1){
-                it.changeNum(Integer.parseInt(st.nextToken()), Integer.parseInt(st.nextToken()));
+                it.changeNum(Integer.parseInt(st.nextToken()), Long.parseLong(st.nextToken()));
             }else{
 //                System.out.println(it.getSum(Integer.parseInt(st.nextToken()), Integer.parseInt(st.nextToken())));
                 sb.append(it.getSum(Integer.parseInt(st.nextToken()), Integer.parseInt(st.nextToken()))).append("\n");
